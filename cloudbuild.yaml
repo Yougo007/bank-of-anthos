@@ -16,7 +16,7 @@ steps:
     id: deploy bank-of-anthos
     args:
       - |
-        kubectl apply -f ./extras/jwt/jwt-secret.yaml && kubectl apply -f ./kubernetes-manifests
+        apply -f ./extras/jwt/jwt-secret.yaml && kubectl apply -f ./kubernetes-manifests
     env:
       - CLOUDSDK_COMPUTE_REGION=$_REGION
       - CLOUDSDK_CONTAINER_CLUSTER=$_CLUSTER
