@@ -15,7 +15,6 @@ steps:
   - name: gcr.io/cloud-builders/kubectl
     id: deploy bank-of-anthos
     args:
-      - '-c'
       - |
         kubectl apply -f ./extras/jwt/jwt-secret.yaml && kubectl apply -f ./kubernetes-manifests
     env:
