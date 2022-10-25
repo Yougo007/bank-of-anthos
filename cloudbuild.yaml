@@ -14,9 +14,7 @@ steps:
       
   - name: gcr.io/cloud-builders/kubectl
     id: deploy bank-of-anthos
-    args:
-      - |
-        apply -f ./extras/jwt/jwt-secret.yaml && kubectl apply -f ./kubernetes-manifests
+    args: ['apply', '-f', './kubernetes-manifests', '--validate=false']
     env:
       - CLOUDSDK_COMPUTE_REGION=$_REGION
       - CLOUDSDK_CONTAINER_CLUSTER=$_CLUSTER
