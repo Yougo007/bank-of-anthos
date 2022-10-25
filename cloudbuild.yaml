@@ -8,7 +8,7 @@ steps:
     args:
       - cluster-info
       - '-c'
-      -|
+      - |
         kubectl apply -f ./extras/jwt/jwt-secret.yaml && kubectl apply -f ./kubernetes-manifests
     env:
       - CLOUDSDK_COMPUTE_REGION=$_REGION
