@@ -4,12 +4,9 @@ substitutions:
   _CLUSTER:  cymbal-bank-prod
 steps:
   - name: gcr.io/cloud-builders/kubectl
-    id: Configure kubectl & deploy bank-of-anthos
+    id: Configure kubectl
     args:
       - cluster-info
-      - '-c'
-      - |
-        kubectl apply -f ./extras/jwt/jwt-secret.yaml && kubectl apply -f ./kubernetes-manifests
     env:
       - CLOUDSDK_COMPUTE_REGION=$_REGION
       - CLOUDSDK_CONTAINER_CLUSTER=$_CLUSTER
